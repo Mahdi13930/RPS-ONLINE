@@ -1,4 +1,4 @@
-name = "rps-arena-online-4"
+name = "rps-online-4"
 main = "worker.js"
 compatibility_date = "2026-11-21"
 
