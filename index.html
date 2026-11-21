@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#080d1b">
+  <title>RPS Arena Online</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="RPS Arena Online"><span class="brand-mark">R</span><span>RPS <b>ARENA</b><small>ONLINE BATTLE</small></span></a>
+      <div class="live-pill"><i></i> بازی آنلاین</div>
+    </header>
+
+    <section class="intro">
+      <div class="eyebrow"><span>✦</span> REAL-TIME MULTIPLAYER</div>
+      <h1>آماده‌ای برای <em>نبرد؟</em></h1>
+      <p>اتاق بساز، کد را برای دوستت بفرست و سنگ، کاغذ، قیچی بازی کن.</p>
+    </section>
+
+    <section class="lobby panel" id="lobbyPanel">
+      <div class="section-title"><span class="title-icon">⌘</span><div><h2>ورود به میدان</h2><p>بدون ثبت‌نام؛ فقط وارد اتاق شو.</p></div></div>
+      <div class="lobby-grid">
+        <button class="action-card create" id="createBtn" type="button"><span class="action-icon">＋</span><span><b>ساخت اتاق جدید</b><small>میزبان شو و کد بساز</small></span><strong>←</strong></button>
+        <div class="join-box">
+          <label for="roomInput">کد اتاق دوستت</label>
+          <div class="join-row"><input id="roomInput" maxlength="5" autocomplete="off" placeholder="ABCDE" inputmode="text" dir="ltr"><button class="btn primary" id="joinBtn" type="button">ورود به اتاق</button></div>
+        </div>
+      </div>
+      <div class="room-share" id="roomShare" hidden>
+        <div><small>کد اتاق شما</small><strong id="roomCode">-----</strong></div>
+        <button class="btn ghost" id="copyBtn" type="button">کپی کد</button>
+      </div>
+    </section>
+
+    <section class="match panel" id="matchPanel" hidden>
+      <div class="match-head"><div><span class="eyebrow">LIVE MATCH</span><h2>مسابقه آنلاین</h2></div><span class="room-tag">ROOM <b id="matchRoom">-----</b></span></div>
+      <div class="scoreboard">
+        <article class="player-card me"><div class="player-avatar">P1</div><span class="player-label">شما</span><h3>Player 1</h3><strong id="score1">0</strong><small>میزبان</small></article>
+        <div class="versus"><span>VS</span><i></i></div>
+        <article class="player-card opponent"><div class="player-avatar">P2</div><span class="player-label">حریف</span><h3>Player 2</h3><strong id="score2">0</strong><small id="opponentState">در انتظار ورود</small></article>
+      </div>
+      <div class="status" id="statusBox" role="status" aria-live="polite"><span class="status-dot"></span><span id="statusText">در حال آماده‌سازی اتاق...</span></div>
+      <div class="move-area">
+        <div class="move-title"><h3>حرکتت را انتخاب کن</h3><span>اولین بازیکن که ۳ دور ببرد، برنده است.</span></div>
+        <div class="moves">
+          <button class="move-btn" data-move="rock" type="button" disabled><span>🪨</span><b>سنگ</b></button>
+          <button class="move-btn" data-move="paper" type="button" disabled><span>📄</span><b>کاغذ</b></button>
+          <button class="move-btn" data-move="scissors" type="button" disabled><span>✂️</span><b>قیچی</b></button>
+        </div>
+      </div>
+      <div class="match-actions"><button class="btn ghost" id="copyMatchBtn" type="button">اشتراک کد اتاق</button><button class="btn ghost" id="resetBtn" type="button">مسابقه جدید</button><button class="btn danger" id="leaveBtn" type="button">خروج از اتاق</button></div>
+      <div class="history"><h3>گزارش مسابقه</h3><div id="historyList"><p class="empty">هنوز دوری انجام نشده است.</p></div></div>
+    </section>
+
+    <footer>RPS ARENA <span>•</span> فقط بازی آنلاین، بدون حساب کاربری و رنکینگ</footer>
+  </main>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="/app.js" defer></script>
+</body>
+</html>

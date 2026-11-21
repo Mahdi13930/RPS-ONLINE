@@ -1,0 +1,16 @@
+name = "rps-arena-online-4"
+main = "worker.js"
+compatibility_date = "2026-11-21"
+
+[assets]
+directory = "./public"
+binding = "ASSETS"
+run_worker_first = ["/room/*", "/health"]
+
+[[durable_objects.bindings]]
+name = "ROOM"
+class_name = "Room"
+
+[exports.Room]
+type = "durable-object"
+storage = "sqlite"
